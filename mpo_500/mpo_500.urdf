@@ -51,7 +51,7 @@
     </collision>
   </link>
   <!-- WHEELS -->
-  <joint name="wheel_front_left_joint" type="continuous">
+  <joint name="wheel_front_left_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.25 0.28 0.13"/>
     <axis xyz="0 1 0"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -78,7 +78,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="wheel_front_right_joint" type="continuous">
+  <joint name="wheel_front_right_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.25 -0.28 0.13"/>
     <axis xyz="0 1 0"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -105,7 +105,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="wheel_back_left_joint" type="continuous">
+  <joint name="wheel_back_left_joint" type="fixed">
     <origin rpy="0 0 0" xyz="-0.25 0.28 0.13"/>
     <axis xyz="0 1 0"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -132,7 +132,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="wheel_back_right_joint" type="continuous">
+  <joint name="wheel_back_right_joint" type="fixed">
     <origin rpy="0 0 0" xyz="-0.25 -0.28 0.13"/>
     <axis xyz="0 1 0"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -156,59 +156,6 @@
       <origin rpy="1.59 0 0" xyz="0 0 0"/>
       <geometry>
         <cylinder length="0.1" radius="0.12"/>
-      </geometry>
-    </collision>
-  </link>
-  <!-- Laser Scanner -->
-  <joint name="laserfront_joint" type="fixed">
-    <axis xyz="0 1 0"/>
-    <origin rpy="0 0 0" xyz="0.39 0 0"/>
-    <parent link="base_link"/>
-    <child link="laserfront_link"/>
-  </joint>
-  <link name="laserfront_link" type="laser">
-    <inertial>
-      <mass value="0.001"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="Red"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size=".001 .001 .001"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="laserback_joint" type="fixed">
-    <axis xyz="0 1 0"/>
-    <origin rpy="0 0 3.14" xyz="-0.39 0 0"/>
-    <parent link="base_link"/>
-    <child link="laserback_link"/>
-  </joint>
-  <link name="laserback_link" type="laser">
-    <inertial>
-      <mass value="0.001"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="Red"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size=".001 .001 .001"/>
       </geometry>
     </collision>
   </link>
