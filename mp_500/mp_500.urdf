@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<robot name="mp_400">
+<robot name="mp_500">
 
   <link name="base_link">
     <visual>
       <geometry>
-        <box size=".823 .592 .361"/>
+        <cylinder length="0.29" radius="0.255"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.71"/>
+      <origin rpy="0 0 0" xyz="0 0 0.285"/>
       <material name="yellow">
       	<color rgba=".8 .8 0 1"/>
       </material>
     </visual>
     <collision>
       <geometry>
-        <box size=" .9 .6 .4"/>
+        <cylinder length="0.35" radius="0.3"/>
       </geometry>
     </collision>
   </link>
@@ -46,7 +46,7 @@
   <link name="left_wheel">
     <visual>
       <geometry>
-        <cylinder length="0.03" radius="0.130"/>
+        <cylinder length="0.03" radius="0.075"/>
       </geometry>
       <origin rpy="1.57075 0 0" xyz="0 0 0"/>
       <material name="blue">
@@ -55,7 +55,7 @@
     </visual>
     <collision>
       <geometry>
-        <cylinder length="0.03" radius="0.130"/>
+        <cylinder length="0.03" radius="0.075"/>
       </geometry>
     </collision>
   </link>
@@ -63,31 +63,6 @@
   <joint name="base_to_left_wheel" type="fixed">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <origin xyz="0 -0.265 0.08"/>
-  </joint>
-
-
-
-  <link name="back_wheel">
-    <visual>
-      <geometry>
-        <cylinder length="0.03" radius="0.130"/>
-      </geometry>
-      <origin rpy="1.57075 0 0" xyz="0 0 0"/>
-      <material name="blue">
-        <color rgba="0 .8 .8 1"/>
-      </material>
-    </visual>
-    <collision>
-      <geometry>
-        <cylinder length="0.03" radius="0.130"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="base_to_back_wheel" type="fixed">
-    <parent link="base_link"/>
-    <child link="back_wheel"/>
     <origin xyz="0 -0.265 0.08"/>
   </joint>
 
