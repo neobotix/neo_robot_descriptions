@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot name="mp_400">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.678 0.602 0.281"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.15"/>
+      <material name="yellow">
+      	<color rgba=".8 .8 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.35" radius="0.45"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.03" radius="0.075"/>
+      </geometry>
+      <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 .8 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.03" radius="0.075"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_to_right_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 0.301 0.08"/>
+  </joint>
+
+
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.03" radius="0.075"/>
+      </geometry>
+      <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 .8 .8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.03" radius="0.075"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_to_left_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 -0.301 0.08"/>
+  </joint>
+
+
+</robot>
