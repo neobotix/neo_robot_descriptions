@@ -7,6 +7,7 @@
   <license>BSD</license>
   <url type="website">http://www.neobotix-robots.com</url>
   <author>Jan-Niklas Nieland</author>
+  <author email="allison@lyonthackston.com">Allison Thackston</author>
   <buildtool_depend>catkin</buildtool_depend>
 
 
